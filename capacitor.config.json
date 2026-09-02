@@ -1,0 +1,5 @@
+{
+  "appId": "io.davoice.wakeword.capacitor.example",
+  "appName": "Capacitor Wake Word Example",
+  "webDir": "www"
+}
