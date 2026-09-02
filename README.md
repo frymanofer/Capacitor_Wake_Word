@@ -1,6 +1,6 @@
 # Capacitor Wake Word Example
 
-A minimal Android and iOS example for [`cordova-wake-word`](https://www.npmjs.com/package/cordova-wake-word), an on-device wake word, hotword, and keyword detection plugin that works in Capacitor through its Cordova compatibility layer.
+A minimal Android and iOS example for [`capacitor-wake-word`](https://www.npmjs.com/package/capacitor-wake-word), an on-device wake word, hotword, and keyword detection package for Capacitor on Android and iOS.
 
 The example loads `hey_lookdeep.dm`, creates a native detector with a `0.99` threshold and buffer count of `2`, and then destroys it. The same `.dm` model is used on Android and iOS.
 
@@ -41,14 +41,14 @@ The CocoaPods option is required because the Cordova plugin currently declares i
 This repository consumes the published npm package:
 
 ```json
-"cordova-wake-word": "^0.1.2"
+"capacitor-wake-word": "^0.1.2"
 ```
 
 It does not use a local dependency or contain a copy of the native libraries or model files.
 
 ## How it works
 
-Capacitor discovers `cordova-wake-word` as a Cordova-compatible plugin during `npx cap sync`. The app waits for `deviceready`, accesses `window.DaVoiceWakeWord`, and verifies that the native detector can be created and destroyed.
+Capacitor discovers `capacitor-wake-word` through its Cordova compatibility layer during `npx cap sync`. The app waits for `deviceready`, accesses `window.DaVoiceWakeWord`, and verifies that the native detector can be created and destroyed.
 
 ## Custom wake words
 

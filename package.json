@@ -2,7 +2,7 @@
   "name": "capacitor-wake-word-example",
   "version": "1.0.0",
   "private": true,
-  "description": "Capacitor example app for on-device wake word detection with cordova-wake-word.",
+  "description": "Capacitor example app for on-device wake word detection with capacitor-wake-word.",
   "scripts": {
     "sync": "cap sync",
     "add:android": "cap add android",
@@ -27,7 +27,7 @@
     "@capacitor/android": "8.5.1",
     "@capacitor/core": "8.5.1",
     "@capacitor/ios": "8.5.1",
-    "cordova-wake-word": "^0.1.2"
+    "capacitor-wake-word": "^0.1.2"
   },
   "devDependencies": {
     "@capacitor/cli": "8.5.1"
