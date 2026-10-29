@@ -1,5 +1,7 @@
 # Capacitor Wake Word Example
 
+[License](LICENSE) · [Model and Voice Asset Notice](MODEL_NOTICES.md)
+
 A minimal Android and iOS example for [`capacitor-wake-word`](https://www.npmjs.com/package/capacitor-wake-word), an on-device wake word, hotword, and keyword detection package for Capacitor on Android and iOS.
 
 The example loads `hey_lookdeep.dm`, creates a native detector with a `0.99` threshold and buffer count of `2`, and then destroys it. The same `.dm` model is used on Android and iOS.
