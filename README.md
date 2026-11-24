@@ -14,7 +14,7 @@ The example loads `hey_lookdeep.dm`, creates a native detector with a `0.99` thr
 
 - Node.js and npm
 - Android Studio and an Android SDK for Android builds
-- macOS, Xcode, and CocoaPods for iOS builds
+- macOS, Xcode, and CocoaPods for iOS builds. The app targets iOS 15.1 or newer, which the plugin's ONNX Runtime pod (`DaVoiceOnnxRuntime` 1.31.0) requires: `scripts/capacitor_setup.mjs` sets it in the generated iOS project before every `cap add` / `cap sync` (`capacitor:update:before` in `package.json`). If `pod install` can't find that pod, run `pod install --repo-update` once in `ios/App`. The Capacitor CLI needs Node.js 22 or newer.
 
 ## Install
 
@@ -47,7 +47,7 @@ The CocoaPods option is required because the Cordova plugin currently declares i
 This repository consumes the published npm package:
 
 ```json
-"capacitor-wake-word": "^0.1.2"
+"capacitor-wake-word": "^0.2.0"
 ```
 
 It does not use a local dependency or contain a copy of the native libraries or model files. ([example_car_agent](example_car_agent) bundles its own wake word and speaker verification models in `src/app/static/models`.)
