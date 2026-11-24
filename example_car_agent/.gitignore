@@ -1,0 +1,10 @@
+node_modules/
+www/
+platforms/
+plugins/
+android/
+ios/
+*.log
+.DS_Store
+# Your own settings (API keys); npm run build creates it from src/local.config.example.ts.
+src/local.config.ts

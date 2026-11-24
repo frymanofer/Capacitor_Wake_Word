@@ -1,0 +1,31 @@
+{
+  "name": "davoice-car-agent-capacitor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DaVoice: AI Car Voice Agent for Capacitor: an on-device voice assistant for a simulated car (wake word, speaker verification, STT, on-device agent, TTS).",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "sync:rn": "node scripts/sync_from_rn.mjs",
+    "add:android": "npm run build && cap add android",
+    "add:ios": "npm run build && cap add ios --packagemanager CocoaPods",
+    "sync": "npm run build && cap sync",
+    "android": "npm run build && cap run android",
+    "ios": "npm run build && cap run ios",
+    "capacitor:update:before": "node scripts/capacitor_setup.mjs"
+  },
+  "author": "DaVoice.io",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "8.5.1",
+    "@capacitor/core": "8.5.1",
+    "@capacitor/ios": "8.5.1",
+    "capacitor-speech": "^0.1.0",
+    "capacitor-voice2voice": "^0.1.0",
+    "capacitor-wake-word": "^0.2.0",
+    "tweetnacl": "1.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.1",
+    "esbuild": "0.24.2"
+  }
+}
