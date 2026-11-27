@@ -1,6 +1,8 @@
 // Boot: wait for Cordova / Capacitor, read the app's directories (the shared modules read
 // RNFS.DocumentDirectoryPath when they load), then load and start the app.
 declare const require: (id: string) => any;   // esbuild bundles it
+// first: every console line gets the time (src/rn/debug/logTimestamps.ts)
+import '../rn/debug/logTimestamps';
 
 document.addEventListener('deviceready', async () => {
     const root = document.getElementById('app')!;

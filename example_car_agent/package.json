@@ -19,9 +19,9 @@
     "@capacitor/android": "8.5.1",
     "@capacitor/core": "8.5.1",
     "@capacitor/ios": "8.5.1",
-    "capacitor-speech": "^0.1.0",
-    "capacitor-voice2voice": "^0.1.0",
-    "capacitor-wake-word": "^0.2.0",
+    "capacitor-speech": "^0.1.1",
+    "capacitor-voice2voice": "^0.1.2",
+    "capacitor-wake-word": "^0.2.3",
     "tweetnacl": "1.0.3"
   },
   "devDependencies": {

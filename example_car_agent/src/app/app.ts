@@ -30,6 +30,7 @@ import { loadConversationSettings, saveConversationSettings } from '../rn/conver
 import { conversationHint, conversationTapEnabled } from '../rn/conversation/hint';
 import { dropWakePhrase } from '../rn/conversation/wakePhrase';
 import { mergeSmartKeepPunct } from '../rn/stt';
+import { silenceFor } from '../rn/stt/endOfSpeech';
 import { defaultAudioRoutingConfig } from '../rn/wakeword';
 import RNFS from 'react-native-fs';
 import { Platform } from 'react-native';
@@ -429,7 +430,11 @@ function onHeard(text: string) {
     transcript = Platform.OS === 'android' ? mergeSmartKeepPunct(transcript, text, 2) : text;
     setLive(withoutWakePhrase(transcript));
     if (endOfSpeechTimer) clearTimeout(endOfSpeechTimer);
-    endOfSpeechTimer = setTimeout(sendHeard, endOfSpeechMs(state.settings));
+    // words that cannot end a request ("Set the", "Please") wait longer (src/rn/stt/endOfSpeech.ts)
+    const base = endOfSpeechMs(state.settings);
+    const wait = silenceFor(withoutWakePhrase(transcript), base, state.language ?? 'en');
+    if (wait !== base) console.log(`[AIChat] sounds unfinished, waiting ${wait} ms: "${withoutWakePhrase(transcript)}"`);
+    endOfSpeechTimer = setTimeout(sendHeard, wait);
 }
 
 function sendHeard() {
